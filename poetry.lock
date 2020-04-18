@@ -451,6 +451,14 @@ six = "*"
 test = ["pytest", "mock"]
 
 [[package]]
+category = "main"
+description = "Template Text Parser"
+name = "ttp"
+optional = false
+python-versions = "*"
+version = "0.3.0"
+
+[[package]]
 category = "dev"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
 name = "typed-ast"
@@ -475,7 +483,7 @@ python-versions = "*"
 version = "1.11.2"
 
 [metadata]
-content-hash = "d2bbdd21a4adcf827fbd685aae88cbb479f1ceec926fa9ed59d2a9807274f4ca"
+content-hash = "0b1ebbfa9c94656040aa9af6a3fd1b6d1b0d152160d2431e0b5d11c8d86b04f1"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -745,6 +753,9 @@ toml = [
 traitlets = [
     {file = "traitlets-4.3.3-py2.py3-none-any.whl", hash = "sha256:70b4c6a1d9019d7b4f6846832288f86998aa3b9207c6821f3578a6a6a467fe44"},
     {file = "traitlets-4.3.3.tar.gz", hash = "sha256:d023ee369ddd2763310e4c3eae1ff649689440d4ae59d7485eb4cfbbe3e359f7"},
+]
+ttp = [
+    {file = "ttp-0.3.0.tar.gz", hash = "sha256:b85d3071984764ec9d9aac283cca7e332e95d842f46e251ce43bb8d80abb6f98"},
 ]
 typed-ast = [
     {file = "typed_ast-1.4.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:73d785a950fc82dd2a25897d525d003f6378d1cb23ab305578394694202a58c3"},

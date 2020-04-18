@@ -8,6 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7"
 netmiko = "^3.1.0"
+ttp = "^0.3.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.4.4"
