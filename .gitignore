@@ -138,5 +138,5 @@ dmypy.json
 cython_debug/
 
 # Project specific
-modem.py
+modem_info.py
 .vscode/
