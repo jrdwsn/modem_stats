@@ -1,0 +1,5 @@
+Status: {{ status }}
+Last Retrain Reason:	{{ last_retrain_reason }}
+Last initialization procedure status:	{{ last_init_proc_reason }}
+Max:	Upstream rate = {{ max_up_rate }} {{ max_up_unit }}, Downstream rate = {{ max_down_rate }} {{ max_down_unit }}
+Bearer:	0, Upstream rate = {{ bearer_up_rate }} {{ bearer_up_unit }}, Downstream rate = {{ bearer_down_rate }} {{ bearer_down_unit }}

@@ -4,6 +4,7 @@ Pull line stats from VDSL modem
 """
 
 from netmiko import ConnectHandler
+from ttp import ttp
 from modem import modem
 
 
@@ -16,14 +17,18 @@ def main() -> None:
         device_type="generic_termserver",
         host=modem["host"],
         username=modem["username"],
-        password=modem["password"]
+        password=modem["password"],
     )
 
-    output = net_connect.send_command("xdslctl info")
-
-    print(output)
+    xdslctl_info_output = net_connect.send_command("xdslctl info")
 
     net_connect.disconnect()
+
+    parser = ttp(
+        data=xdslctl_info_output, template="templates/xdslctl_info.txt"
+    )
+    parser.parse()
+    print(parser.result(format="json")[0])
 
 
 if __name__ == "__main__":
