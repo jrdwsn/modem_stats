@@ -3,9 +3,8 @@
 Pull line stats from VDSL modem
 """
 
-from netmiko import ConnectHandler
-from ttp import ttp
-from modem import modem
+from modem_info import modem_info
+from modem import Modem
 
 
 def main() -> None:
@@ -13,22 +12,11 @@ def main() -> None:
     Execution starts here
     """
 
-    net_connect = ConnectHandler(
-        device_type="generic_termserver",
-        host=modem["host"],
-        username=modem["username"],
-        password=modem["password"],
+    vdsl_modem = Modem(
+        modem_info["host"], modem_info["username"], modem_info["password"]
     )
-
-    xdslctl_info_output = net_connect.send_command("xdslctl info")
-
-    net_connect.disconnect()
-
-    parser = ttp(
-        data=xdslctl_info_output, template="templates/xdslctl_info.txt"
-    )
-    parser.parse()
-    print(parser.result(format="json")[0])
+    line_stats = vdsl_modem.get_line_stats()
+    print(line_stats)
 
 
 if __name__ == "__main__":
