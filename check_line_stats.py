@@ -5,6 +5,7 @@ Pull line stats from VDSL modem
 
 from modem_info import modem_info
 from modem import Modem
+import json
 
 
 def main() -> None:
@@ -13,10 +14,12 @@ def main() -> None:
     """
 
     vdsl_modem = Modem(
-        modem_info["host"], modem_info["username"], modem_info["password"]
+        host=modem_info["host"],
+        username=modem_info["username"],
+        password=modem_info["password"],
     )
     line_stats = vdsl_modem.get_line_stats()
-    print(line_stats)
+    print(json.dumps(line_stats, indent=2))
 
 
 if __name__ == "__main__":
